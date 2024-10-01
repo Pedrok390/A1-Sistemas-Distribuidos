@@ -1,42 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Wordle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket Client</title>
-    <style>
-        h1 {
-            color: green;
-        }
+        <link rel="stylesheet" href="wordle.css">
+        <script src="cliente.js"></script>
+    </head>
 
-        .container {
-            margin: 10px;
-        }
-    </style>
-</head>
+    <body>
+        <h1 id="title">Wordle</h1>
+        <hr>
+        <br>
+        <div id="board">
+        </div>
 
-<body>
-    <h1>WebSocket Example</h1>
-    <div class="container">
-        <label>Send Message to Server:</label> <br><br>
-        <input type="text" id="messageInput">
-        <button onclick="sendMessage()">Send</button>
-        <div id="output"></div>
-    </div>
-    <script>
-        const ws = new WebSocket("ws://localhost:9082");
-
-        ws.addEventListener("open", () =>{
-            console.log("We are connected");
-
-            ws.send("Insira um numero");
-        });
-
-        ws.addEventListener("message", e =>{
-            console.log(e);
-        });
-    </script>
-</body>
-
+        <br>
+        <h1 id="answer"></h1>
+    </body>
 </html>
